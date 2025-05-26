@@ -33,6 +33,7 @@ app.get("/",(req:Request,res:Response)=>{
 });
 
 app.post("/api/chat",limiter,async (req:Request,res:Response)=>{
+  console.log('/api/chat called')
   const {messages}=req.body;
   const LLMresponse=await LLMcall(messages as ChatCompletionSystemMessageParam[])
   // res.json({content:"I don't know how to answer that"});
