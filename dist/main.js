@@ -30,6 +30,7 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
 });
 app.post("/api/chat", limiter, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log('/api/chat called')
     const { messages } = req.body;
     const LLMresponse = yield LLMcall(messages);
     // res.json({content:"I don't know how to answer that"});
