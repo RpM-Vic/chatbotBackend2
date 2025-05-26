@@ -14,7 +14,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 export function LLMcall(messages) {
     return __awaiter(this, void 0, void 0, function* () {
         const completion = yield groq.chat.completions.create({
-            model: 'llama3-70b-8192',
+            model: 'llama-3.3-70b-versatile',
             messages,
         });
         const LLMresponse = completion.choices[0].message;
